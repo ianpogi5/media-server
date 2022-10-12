@@ -98,11 +98,12 @@ services:
   plex:
     image: linuxserver/plex
     container_name: plex
-    network_mode: host
+    #network_mode: host
     environment:
       - TZ=Asia/Manila
       - VERSION=docker
-      #- PLEX_CLAIM=claim-1234567890
+      # https://www.plex.tv/claim
+      - PLEX_CLAIM=claim-1234567890
     volumes:
       - /media/data/appdata/plex:/config
       - /media/data/public/TV:/tv
